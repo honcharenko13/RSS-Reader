@@ -13,13 +13,11 @@ struct NewsItem: XMLIndexerDeserializable {
     let title: String?
     let link: String?
     let itemDescription: String?
-   // let thumbnailURL: String?
     
     static func deserialize(_ node: XMLIndexer) throws -> NewsItem {
         return try NewsItem(title: node["title"].value(),
                             link: node["link"].value(),
-                            itemDescription: node["description"].value())//,
-                            //thumbnailURL: node["description"].value())
+                            itemDescription: node["description"].value())
     }
     
 }
